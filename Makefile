@@ -18,6 +18,8 @@ libvtile: build/Makefile
 
 clean:
 	rm -rf ./build
+	rm -f src/vector_tile.pb.cc
+	rm -f src/vector_tile.pb.h
 
 test: libvtile
 	./build/Release/tests

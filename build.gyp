@@ -17,7 +17,8 @@
             './proto/vector_tile.proto'
           ],
           'outputs': [
-            "<(SHARED_INTERMEDIATE_DIR)/vector_tile.pb.cc"
+            "<(SHARED_INTERMEDIATE_DIR)/vector_tile.pb.cc",
+            "<(SHARED_INTERMEDIATE_DIR)/vector_tile.pb.h"
           ],
           'action': ['protoc','-Iproto/','--cpp_out=<(SHARED_INTERMEDIATE_DIR)/','./proto/vector_tile.proto']
         }
@@ -51,9 +52,13 @@
            '<!@(mapnik-config --cflags)'
         ],
       },
+      'include_dirs': [
+        '<(SHARED_INTERMEDIATE_DIR)/'
+      ],
+
       'direct_dependent_settings': {
         'include_dirs': [
-          './src/',
+          '<(SHARED_INTERMEDIATE_DIR)/'
         ],
         'cflags_cc' : [
             '<!@(mapnik-config --cflags)'
@@ -87,7 +92,7 @@
         "./test/raster_tile.cpp",
       ],
       "include_dirs": [
-          "./"
+        "./src"
       ]
     }    
   ]
