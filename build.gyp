@@ -65,8 +65,6 @@
         ],
         'libraries':[
           '<!@(mapnik-config --libs)',
-          '-lmapnik-wkt',
-          '-lmapnik-json',
           '<!@(mapnik-config --ldflags)',
           '-lprotobuf-lite',
         ],
