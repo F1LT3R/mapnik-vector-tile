@@ -38,7 +38,7 @@
 
 namespace mapnik { namespace vector_tile_impl {
 
-    void add_attributes(mapnik::feature_ptr feature,
+    static inline void add_attributes(mapnik::feature_ptr feature,
                         vector_tile::Tile_Feature const& f,
                         vector_tile::Tile_Layer const& layer,
                         mapnik::transcoder const& tr)

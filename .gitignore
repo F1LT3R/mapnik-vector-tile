@@ -1,3 +1,5 @@
+deps/gyp
+build
 archive
 python
 .DS_Store
